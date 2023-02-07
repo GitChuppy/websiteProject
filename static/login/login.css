@@ -1,0 +1,12 @@
+div.loginForm {
+    display: table-row;
+}
+
+div.registerForm {
+    display: table-row;
+}
+
+label,
+input {
+    display: table-cell;
+}

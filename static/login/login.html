@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="static/login/login.css">
+    <script src="static/login/login.js"></script>
+</head>
+<body>
+    <form action="/login" method="post" class="loginForm" id="loginFormId">
+        <div class="loginForm">
+            <input placeholder="Email Adress" type="email" name="usernameLogin" id="usernameLoginId" required>
+        </div>
+        <div class="loginForm">
+            <input placeholder="Password" type="password" name="passwordLogin" id="passwordLoginId" required>
+        </div>
+        <div class="loginForm">
+            <button type="submit">Login</button>
+        </div>
+    </form>
+    <a href="" id="register">New member?</a>   <a href="" id="recoverPW">Forgot password?</a>
+    <form action="/register" method="post" class="registerForm" id="registerFormId">
+        <div class="registerForm">
+            <input placeholder="Email Adress" type="email" name="emailRegister" id="emailRegisterId" required>
+        </div>
+        <div class="registerForm">
+            <input placeholder="Username" type="text" name="usernameRegister" id="usernameRegisterId" required>
+        </div>
+        <div class="registerForm">
+            <input placeholder="Password" type="password" name="passwordRegister" id="passwordRegisterId" required>
+        </div>  
+        <div class="registerForm">
+            <input type="submit" value="Register">
+        </div>
+    </form>
+    <a href="" id="login">Already a member?</a>
+</body>
