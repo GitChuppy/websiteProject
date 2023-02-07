@@ -1,7 +1,7 @@
 window.onload = all;
 
 function all() {
-    console.log("served login.js")
+    console.log("served account.js")
     var formLogin                       = document.getElementById("loginFormId")
     var formRegister                    = document.getElementById("registerFormId")
     var registerLink                    = document.getElementById("register")

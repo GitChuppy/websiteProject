@@ -2,24 +2,20 @@ from models import Session, User
 
 def registerUser( dict ):
     """checks if a user is already on the platform, and if they are not, add them to it"""
-    
+    #TODO add checking
     session = Session()
-    #TODO add the checking part
 
     new_user = User(    userUUID    =   dict['uuidRegister'],
                         username    =   dict['usernameRegister'],
                         userEmail   =   dict['emailRegister'],
                         password    =   dict['passwordRegister']
                     )
-    print('start user registering')
     session.add(new_user)
-    print('committing user data...')
     session.commit()
-    print('finished user registering')
     session.close()
     return 0
 
-def getUserData(usernameLogin):
+def getUserData(usernameLogin, type):
     """takes the username and returns a dictionary of all the user data"""
     session = Session()
 
@@ -27,5 +23,10 @@ def getUserData(usernameLogin):
     print(user.username)
     print(user.password)
     session.close()
-    return user
-    
+
+    if type == 'password':
+        return user.password
+    elif type == 'email':
+        return user.userEmail
+    elif type == 'all':
+        return user
