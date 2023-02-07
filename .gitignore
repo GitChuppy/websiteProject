@@ -1,2 +1,2 @@
-__pycache_
-install_dependencies.bat
+__pycache__/
+.install_dependencies.bat
