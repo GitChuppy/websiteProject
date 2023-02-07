@@ -1,19 +1,8 @@
 from flask import Flask, request, send_from_directory
 from passlib.hash import argon2 as A2
-
-from sqlalchemy import create_engine, Column, String
-from sqlalchemy.orm import sessionmaker, declarative_base
+from database_functions import registerUser, getUserData
 import uuid
 
-from database_functions import registerUser, getUserData
-
-"""
-._____________________________.
-|                             |
-|   END OF SQLALCHEMY SETUP   |
-|_____________________________|
-
-"""
 
 app = Flask(__name__)
 
