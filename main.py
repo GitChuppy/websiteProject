@@ -1,12 +1,19 @@
 from flask import Flask, request, send_from_directory
 from passlib.hash import argon2 as A2
+
+from sqlalchemy import create_engine, Column, String
+from sqlalchemy.orm import sessionmaker, declarative_base
 import uuid
 
-import sys
-from os.path import dirname
-sys.path.append(dirname(__file__))
+from database_functions import registerUser, getUserData
 
-import dbHandlerMOD as dbHandler
+"""
+._____________________________.
+|                             |
+|   END OF SQLALCHEMY SETUP   |
+|_____________________________|
+
+"""
 
 app = Flask(__name__)
 
@@ -35,7 +42,7 @@ def register():
                         'passwordRegister'  :   A2.using(rounds=3).hash(    request.form['passwordRegister'])       #TODO use verify(string, hash) for login!
                     }
         
-        dbHandler.registerUser(dict= registerData, tuple= dbHandler.startSession())
+        registerUser(dict= registerData)
         return "1302 REGISTERED" #TODO Send to userpage
 
 if __name__ == "__main__":
