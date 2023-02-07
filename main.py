@@ -21,7 +21,7 @@ def login():
             if A2.verify(loginData['password'], getUserData(usernameLogin=loginData['username'], type='password')):
                 return "1301: LOGGED-IN" #TODO Send to userpage
             else:
-                return "1297: INCORRECT PASSWORT"
+                return "1297: INCORRECT PASSWORD"
         except:
             return "1298: USER NOT REGISTERED"
     
