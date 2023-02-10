@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <title>WebsiteProject</title>
+    <link rel="icon" type="image/png" href="static/account/loginIcon.png">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/acari-sans" type="text/css"/> 
+    <link rel="stylesheet" href="static/account/style.css">
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity=""
+        crossorigin="anonymous"
+    ></script>
+    <script src="https://malsup.github.io/jquery.form.js"></script>
+    <script src="static/account/account.js"></script>
+</head>
+<body>
+    <form action="/api/register" method="post" id="accountForm">
+        <input placeholder="Email Adress" type="email" name="emailRegister" class="registerForm" id="emailRegisterId" required>
+        <input placeholder="Username" type="text" name="usernameRegister" class="registerForm" id="usernameRegisterId" required>
+        <input placeholder="Password" type="password" name="passwordRegister" class="registerForm" id="passwordRegisterId" required>
+        <button type="submit" class="registerForm">Register</button>
+        <a href="/login" id="login">Already a member?</a>
+    </form>
+</body>

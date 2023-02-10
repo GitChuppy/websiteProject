@@ -1,0 +1,122 @@
+#accountForm {    
+    --formHeight: 32rem;
+    --fontName: 'AcariSansRegular';
+    
+    font-family: var(--fontName);
+    font-weight: normal;
+    font-style: normal;
+    
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    margin: auto;
+    margin-top: calc(50vh - var(--formHeight)/2); /*exactly the vertical center*/
+
+    width: 20rem;
+    height: var(--formHeight);
+    border-radius: 5vmin;
+    
+    background-image: linear-gradient(to top right, #061237 5%, #F65354); /*PROMISE*/
+    /*background-image: linear-gradient(to top right, #0b0100 5%, #b93810); /*Bronze*/
+    /*background-image: linear-gradient(to top right, #0b0637 5%, #61b9a0); /*SLATE*/
+}
+
+.loginForm, .registerForm {
+    width: 90%;
+    height: 4rem;
+
+    font-family: var(--fontName);
+    font-size: large;
+    color: lightgray;
+
+    background-color: hsla(0, 0%, 100%, 0.1);
+
+    border: none;
+    border-radius: 0.5rem;
+
+    transition: all 500ms ease-in-out;
+}
+
+input.loginForm, input.registerForm {
+    margin-top: 1rem;
+    text-indent: 1rem;
+    box-sizing: content-box; /*to make width match with input/button */
+    
+    padding: 0px;
+}
+
+input.loginForm::selection, input.registerForm::selection {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+button.loginForm, button.registerForm {
+    margin-top: 2rem;
+    padding: 0;
+    box-sizing: border-box; /*to make width match with input/button */
+}
+
+input.loginForm:hover, input.registerForm:hover {
+    padding: 0px;
+
+    background-color: hsla(0, 0%, 100%, 0.2);
+    color: white;
+    text-indent: 2rem;
+}
+
+button.loginForm:hover, button.registerForm:hover {
+    background-color: hsla(0, 0%, 100%, 0.2);
+}
+
+.loginForm:focus, .registerForm:focus {
+    outline: none;
+    color: white;
+}
+
+#recoverPW, #register, #login {
+    position: relative;
+    color: lightgray;
+    text-decoration: none;
+
+    padding: 1rem 1.5rem 1rem 1.5rem;
+
+    transition: all 500ms ease-in-out;
+}
+
+#recoverPW, #login {
+    margin-top: 1rem;
+}
+
+#recoverPW:hover, #register:hover, #login:hover {
+    position: static;
+    
+    color: white;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    border-radius: 0.5rem;
+    background-color: hsla(0, 0%, 100%, 0.1);
+}
+
+@keyframes example {
+    0% {
+        border: 2px solid red;
+        transform: translateX(0);
+    }
+    33% {
+        transform: translateX(-10px);
+    }
+    67% {
+        transform: translateX(10px);
+    }
+    100% {
+        border: none;
+        transform: translateX(0);
+    }
+}
+
+.userAccErrorAnimTrigger {
+    animation: example 200ms;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 1);
+}

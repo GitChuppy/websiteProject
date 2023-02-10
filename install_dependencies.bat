@@ -6,3 +6,5 @@ echo "Backend for passlib with Argon2"
 pip install argon2_cffi
 echo "SQLAlchemy for MySQL database"
 pip install sqlalchemy
+echo "jsonify"
+pip install jsonify

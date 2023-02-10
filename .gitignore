@@ -1,2 +1,3 @@
 __pycache__/
-.install_dependencies.bat
+install_dependencies.bat
+database01.db

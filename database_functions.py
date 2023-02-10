@@ -1,4 +1,5 @@
 from models import Session, User
+from typing import Union
 
 def registerUser( dict ):
     """checks if a user is already on the platform, and if they are not, add them to it"""
@@ -15,14 +16,18 @@ def registerUser( dict ):
     session.close()
     return 0
 
-def getUserData(usernameLogin, type):
+def getUserData(usernameLogin: str, type: str) -> Union[str, User, int]:
     """takes the username and returns a dictionary of all the user data"""
     session = Session()
 
     user = session.query(User).filter_by(username=usernameLogin).first()
+    session.close()
+
+    if user == None:
+        return 1
+
     print(user.username)
     print(user.password)
-    session.close()
 
     if type == 'password':
         return user.password
